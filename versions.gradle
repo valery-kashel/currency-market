@@ -1,0 +1,16 @@
+ext {
+    kotlinVersion = '1.6.10'
+    http4kVersion = '4.28.1.0'
+    shadowVersion = '6.1.0'
+    http4k_server = [
+            "org.http4k:http4k-core:$http4kVersion",
+            "org.http4k:http4k-format-jackson:$http4kVersion",
+            "org.http4k:http4k-server-jetty:$http4kVersion",
+    ]
+
+    http4k_client = [
+            "org.http4k:http4k-core:$http4kVersion",
+            "org.http4k:http4k-format-jackson:$http4kVersion",
+            "org.http4k:http4k-client-okhttp:$http4kVersion",
+    ]
+}

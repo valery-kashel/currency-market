@@ -1,14 +1,21 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10' apply(false)
+    id 'application'
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+    apply plugin: "org.jetbrains.kotlin.jvm"
+    apply plugin: "application"
+    apply from: rootProject.file("versions.gradle")
+
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
