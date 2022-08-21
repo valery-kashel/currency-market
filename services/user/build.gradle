@@ -1,0 +1,29 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+}
+
+group 'com.vkashel.user'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    http4kVersion = '4.28.1.0'
+    http4k_server = [
+            "org.http4k:http4k-core:$http4kVersion",
+            "org.http4k:http4k-format-jackson:$http4kVersion",
+            "org.http4k:http4k-server-jetty:$http4kVersion"
+    ]
+
+    http4k_client = [
+            "org.http4k:http4k-core:$http4kVersion",
+            "org.http4k:http4k-format-jackson:$http4kVersion",
+            "org.http4k:http4k-client-okhttp:$http4kVersion",
+    ]
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation http4k_server
+}
