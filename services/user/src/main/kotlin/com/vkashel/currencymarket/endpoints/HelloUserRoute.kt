@@ -1,5 +1,6 @@
 package com.vkashel.currencymarket.endpoints
 
+import com.vkashel.currencymarket.server.RestRoute
 import org.http4k.core.Method
 import org.http4k.core.Response
 import org.http4k.core.Status

@@ -1,4 +1,4 @@
-package com.vkashel.currencymarket.endpoints
+package com.vkashel.currencymarket.server
 
 import org.http4k.routing.RoutingHttpHandler
 
