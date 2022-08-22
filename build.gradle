@@ -14,8 +14,12 @@ allprojects {
     apply plugin: "application"
     apply from: rootProject.file("versions.gradle")
 
+    test {
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
