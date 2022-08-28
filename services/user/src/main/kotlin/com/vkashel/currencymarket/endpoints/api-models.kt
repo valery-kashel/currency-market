@@ -13,3 +13,15 @@ fun CreateUserRequest.toUser(): User = User(
     password = password,
     username = username
 )
+
+data class UserResponse(
+    val id: Int,
+    val email: String,
+    val username: String
+)
+
+fun User.toResponse(): UserResponse = UserResponse(
+    id = id,
+    email = email,
+    username = username
+)

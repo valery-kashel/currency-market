@@ -4,4 +4,5 @@ import com.vkashel.currencymarket.domain.User
 
 interface UserRepository {
     fun create(user: User): User
+    fun find(id: Int): User?
 }

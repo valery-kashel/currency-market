@@ -6,4 +6,5 @@ import com.vkashel.currencymarket.repositories.UserRepository
 class UserService(private val userRepository: UserRepository) {
     fun create(user: User): User = userRepository.create(user)
 
+    fun find(id:Int): User? = userRepository.find(id)
 }

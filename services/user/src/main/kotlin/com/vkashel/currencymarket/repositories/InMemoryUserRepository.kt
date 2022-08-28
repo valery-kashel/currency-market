@@ -1,8 +1,8 @@
 package com.vkashel.currencymarket.repositories
 
 import com.vkashel.currencymarket.domain.User
-import java.util.concurrent.*
-import java.util.concurrent.atomic.*
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.atomic.AtomicInteger
 
 class InMemoryUserRepository : UserRepository {
     private val storage = ConcurrentHashMap<Int, User>()
@@ -14,4 +14,6 @@ class InMemoryUserRepository : UserRepository {
         storage[id] = userToSave
         return userToSave
     }
+
+    override fun find(id: Int): User? = storage[id]
 }

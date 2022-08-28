@@ -11,7 +11,7 @@ import org.http4k.routing.routes
 import org.http4k.server.Http4kServer
 import org.http4k.server.Jetty
 
-class RestServer(private vararg val restRoutes: RestRoute) {
+class RestServer(vararg restRoutes: RestRoute) {
     val api: RoutingHttpHandler = ServerFilters.Cors(
         CorsPolicy(
             originPolicy = OriginPolicy.AllowAll(),
