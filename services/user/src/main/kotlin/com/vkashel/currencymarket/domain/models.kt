@@ -6,3 +6,5 @@ data class User(
     val password: String,
     val username: String
 )
+
+data class UserNotFoundException(val id: Int) : RuntimeException("User was not found by id = $id")

@@ -1,6 +1,7 @@
 package com.vkashel.currencymarket.repositories
 
 import com.vkashel.currencymarket.domain.User
+import com.vkashel.currencymarket.domain.UserNotFoundException
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -16,4 +17,13 @@ class InMemoryUserRepository : UserRepository {
     }
 
     override fun find(id: Int): User? = storage[id]
+
+    override fun update(user: User): User {
+        val existsUser = find(user.id) ?: throw UserNotFoundException(user.id)
+        val newUser = existsUser.copy(
+            username = user.username
+        )
+        storage[newUser.id] = newUser
+        return newUser
+    }
 }

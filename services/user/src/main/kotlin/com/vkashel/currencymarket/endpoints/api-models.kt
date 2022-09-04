@@ -8,16 +8,26 @@ data class CreateUserRequest(
     val username: String
 )
 
-fun CreateUserRequest.toUser(): User = User(
-    email = email,
-    password = password,
-    username = username
-)
-
 data class UserResponse(
     val id: Int,
     val email: String,
     val username: String
+)
+
+data class UpdateUserRequest(
+    val username: String
+)
+
+fun UpdateUserRequest.toUser(id: Int): User = User(
+    username = username,
+    email = "",
+    password = ""
+)
+
+fun CreateUserRequest.toUser(): User = User(
+    email = email,
+    password = password,
+    username = username
 )
 
 fun User.toResponse(): UserResponse = UserResponse(
