@@ -1,8 +1,8 @@
-package com.vkashel.currencymarket.endpoints
+package com.vkashel.currencymarket.user.endpoints
 
 import com.vkashel.currencymarket.server.RestRoute
 import com.vkashel.currencymarket.server.withJsonBody
-import com.vkashel.currencymarket.services.UserService
+import com.vkashel.currencymarket.user.services.UserService
 import org.http4k.core.Method.POST
 import org.http4k.core.Request
 import org.http4k.core.Response

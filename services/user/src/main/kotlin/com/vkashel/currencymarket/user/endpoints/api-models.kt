@@ -1,6 +1,6 @@
-package com.vkashel.currencymarket.endpoints
+package com.vkashel.currencymarket.user.endpoints
 
-import com.vkashel.currencymarket.domain.User
+import com.vkashel.currencymarket.user.domain.User
 
 data class CreateUserRequest(
     val email: String,

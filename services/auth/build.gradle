@@ -1,0 +1,6 @@
+dependencies {
+    implementation http4k_server
+    implementation project(":common:server")
+
+    testImplementation testing
+}

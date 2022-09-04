@@ -1,11 +1,11 @@
 package com.vkashel.currencymarket
 
-import com.vkashel.currencymarket.domain.User
-import com.vkashel.currencymarket.endpoints.CreateUserRoute
-import com.vkashel.currencymarket.endpoints.GetUserRoute
-import com.vkashel.currencymarket.repositories.InMemoryUserRepository
+import com.vkashel.currencymarket.user.domain.User
+import com.vkashel.currencymarket.user.endpoints.CreateUserRoute
+import com.vkashel.currencymarket.user.endpoints.GetUserRoute
+import com.vkashel.currencymarket.user.repositories.InMemoryUserRepository
 import com.vkashel.currencymarket.server.RestServer
-import com.vkashel.currencymarket.services.UserService
+import com.vkashel.currencymarket.user.services.UserService
 import org.http4k.testing.JsonApprovalTest
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith

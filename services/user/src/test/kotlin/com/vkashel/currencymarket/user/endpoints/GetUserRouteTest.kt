@@ -1,4 +1,4 @@
-package com.vkashel.currencymarket.endpoints
+package com.vkashel.currencymarket.user.endpoints
 
 import com.vkashel.currencymarket.UsersTestHelper
 import org.http4k.core.Method

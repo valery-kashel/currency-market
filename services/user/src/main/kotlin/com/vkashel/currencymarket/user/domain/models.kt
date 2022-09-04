@@ -1,4 +1,4 @@
-package com.vkashel.currencymarket.domain
+package com.vkashel.currencymarket.user.domain
 
 data class User(
     val id: Int = 0,

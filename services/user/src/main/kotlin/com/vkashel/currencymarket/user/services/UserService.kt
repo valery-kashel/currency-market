@@ -1,8 +1,7 @@
-package com.vkashel.currencymarket.services
+package com.vkashel.currencymarket.user.services
 
-import com.vkashel.currencymarket.domain.User
-import com.vkashel.currencymarket.domain.UserNotFoundException
-import com.vkashel.currencymarket.repositories.UserRepository
+import com.vkashel.currencymarket.user.domain.User
+import com.vkashel.currencymarket.user.repositories.UserRepository
 
 class UserService(private val userRepository: UserRepository) {
     fun create(user: User): User = userRepository.create(user)

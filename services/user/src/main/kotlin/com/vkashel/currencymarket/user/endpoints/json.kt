@@ -1,4 +1,4 @@
-package com.vkashel.currencymarket.endpoints
+package com.vkashel.currencymarket.user.endpoints
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.http4k.core.Body
