@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.6.10' apply(false)
     id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group 'org.example'
@@ -12,11 +13,29 @@ allprojects {
     }
     apply plugin: "org.jetbrains.kotlin.jvm"
     apply plugin: "application"
+    apply plugin: "java"
     apply from: rootProject.file("versions.gradle")
+    apply plugin: 'com.github.johnrengelman.shadow'
 
     test {
         useJUnitPlatform()
     }
+
+    shadowJar {
+        archiveBaseName.set(projectDir.name)
+        archiveClassifier.set('')
+        archiveVersion.set('')
+    }
+}
+
+tasks.register("buildJar") { buildJar ->
+    subprojects
+            .stream()
+            .filter { project -> project.path.startsWith(":services:") }
+            .forEach {
+                println "$it"
+                buildJar.dependsOn(it.tasks.named("shadowJar"))
+            }
 }
 
 dependencies {

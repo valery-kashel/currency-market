@@ -6,3 +6,17 @@ dependencies {
 
     testImplementation testing
 }
+
+var mainClassName = 'com.vkashel.currencymarket.user.UserMainKt'
+
+application {
+    mainClass = mainClassName
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': mainClassName
+        )
+    }
+}
