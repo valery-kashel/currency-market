@@ -1,6 +1,6 @@
 package com.vkashel.currencymarket
 
-import com.vkashel.currencymarket.user.domain.User
+import com.vkashel.currencymarket.common.User
 import com.vkashel.currencymarket.user.endpoints.CreateUserRoute
 import com.vkashel.currencymarket.user.endpoints.GetUserRoute
 import com.vkashel.currencymarket.user.repositories.InMemoryUserRepository

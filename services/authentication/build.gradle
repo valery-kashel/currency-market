@@ -1,7 +1,9 @@
 dependencies {
     implementation http4k_server
+    implementation http4k_client
     implementation project(":common:server")
     implementation project(":common:user-api")
+    implementation project(":common:auth")
     implementation project(":common:common")
 
     testImplementation testing

@@ -1,7 +1,8 @@
-package com.vkashel.currencymarket.auth
+package com.vkashel.currencymarket.authentication
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
+import com.vkashel.currencymarket.common.User
 
 class JWTProvider(secretKey: String) {
     private val algorithm = Algorithm.HMAC256(secretKey)
@@ -10,8 +11,10 @@ class JWTProvider(secretKey: String) {
         .withIssuer(issuer)
         .build()
 
-    fun jwtFor(user: Map<String, String>): String = JWT.create()
-        .withClaim("userId", user["id"])
+    fun jwtFor(user: User): String = JWT.create()
+        .withClaim("userId", user.id)
+        .withClaim("email", user.email)
+        .withClaim("username", user.username)
         .withIssuer(issuer)
         .sign(algorithm)
 

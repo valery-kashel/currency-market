@@ -1,6 +1,6 @@
 package com.vkashel.currencymarket.user.services
 
-import com.vkashel.currencymarket.user.domain.User
+import com.vkashel.currencymarket.common.User
 import com.vkashel.currencymarket.user.repositories.UserRepository
 
 class UserService(private val userRepository: UserRepository) {

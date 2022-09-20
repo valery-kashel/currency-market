@@ -3,6 +3,9 @@ package com.vkashel.currencymarket.user.endpoints
 import com.vkashel.currencymarket.user.domain.UserNotFoundException
 import com.vkashel.currencymarket.server.RestRoute
 import com.vkashel.currencymarket.server.withJsonBody
+import com.vkashel.currencymarket.user.api.UpdateUserRequest
+import com.vkashel.currencymarket.user.api.toResponse
+import com.vkashel.currencymarket.user.api.toUser
 import com.vkashel.currencymarket.user.services.UserService
 import org.http4k.core.Body
 import org.http4k.core.Method

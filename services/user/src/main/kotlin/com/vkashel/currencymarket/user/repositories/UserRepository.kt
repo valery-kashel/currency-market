@@ -1,6 +1,6 @@
 package com.vkashel.currencymarket.user.repositories
 
-import com.vkashel.currencymarket.user.domain.User
+import com.vkashel.currencymarket.common.User
 
 interface UserRepository {
     fun create(user: User): User

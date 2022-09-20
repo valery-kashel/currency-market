@@ -2,6 +2,7 @@ package com.vkashel.currencymarket.user.endpoints
 
 import com.vkashel.currencymarket.UsersTestHelper
 import com.vkashel.currencymarket.server.withJsonBody
+import com.vkashel.currencymarket.user.api.CreateUserRequest
 import org.http4k.core.Method
 import org.http4k.core.Request
 import org.http4k.core.Status

@@ -31,4 +31,11 @@ class RestServer(vararg restRoutes: RestRoute) {
     fun start() = server.start()
 
     fun stop() = server.stop()
+
+    fun addShutdownHook(): RestServer {
+        Runtime.getRuntime().addShutdownHook(Thread {
+            stop()
+        })
+        return this
+    }
 }

@@ -10,13 +10,11 @@ import com.vkashel.currencymarket.user.services.UserService
 fun main() {
     val userRepository = InMemoryUserRepository()
     val userService = UserService(userRepository)
-    val server = RestServer(
+     RestServer(
         CreateUserRoute(userService),
         GetUserRoute(userService),
         UpdateUserRoute(userService)
     )
-    Runtime.getRuntime().addShutdownHook(Thread {
-        server.stop()
-    })
-    server.start()
+         .addShutdownHook()
+         .start()
 }

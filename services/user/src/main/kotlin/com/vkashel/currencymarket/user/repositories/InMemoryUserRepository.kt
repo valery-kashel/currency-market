@@ -1,6 +1,6 @@
 package com.vkashel.currencymarket.user.repositories
 
-import com.vkashel.currencymarket.user.domain.User
+import com.vkashel.currencymarket.common.User
 import com.vkashel.currencymarket.user.domain.UserNotFoundException
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicInteger
