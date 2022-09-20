@@ -33,9 +33,29 @@ tasks.register("buildJar") { buildJar ->
             .stream()
             .filter { project -> project.path.startsWith(":services:") }
             .forEach {
-                println "$it"
                 buildJar.dependsOn(it.tasks.named("shadowJar"))
             }
+}
+
+tasks.register("buildImages") { buildImages ->
+    subprojects
+            .stream()
+            .filter { project -> project.path.startsWith(":services:") }
+            .forEach {
+                println "build image -> $it"
+                var rootDir = "$rootDir.path"
+                var projectName = it.name
+                var filePath = "$rootDir/services/$projectName/build/libs/"
+                var file = new File(filePath)
+                dockerBuildImage(filePath, projectName)
+            }
+}
+
+def dockerBuildImage(pathToJar, serviceName) {
+    exec {
+        executable "docker"
+        args "build", "-f", "$rootDir.path/Dockerfile", "$pathToJar", "-t", "$serviceName-service"
+    }
 }
 
 dependencies {
